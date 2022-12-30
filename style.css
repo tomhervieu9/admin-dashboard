@@ -1,0 +1,249 @@
+/* CSS RESET CODE */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+} 
+html,
+body {
+  overflow-x: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+a {
+    text-decoration: none;
+}
+/* Make images easier to work with */
+img {
+  display: block;
+  max-width: 100%;
+}
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: initial;
+  }
+}
+/* Custom added initializations */
+input:focus {
+  outline: none;
+}
+
+:root {
+  --theme-color: rgb(57, 169, 255);
+  --grey-text: rgb(109, 109, 109);
+  --h1-font-size: 36px;
+  --h2-font-size: 28px;
+  --h3-font-size: 18px;
+  --h4-font-size: 14px;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template: 1fr 5fr / 1fr 4fr;
+}
+
+nav {
+    grid-area: 1 / 1 / -1 / 2;
+    background-color: var(--theme-color);
+    color:white;
+    font-weight: bolder;
+    display: grid;
+    grid-template: 1fr repeat(11, 1fr) 5fr / 1fr 3.5fr;
+}
+
+nav div {
+    font-size: var(--h1-font-size);
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    font-size: var(--h2-font-size);
+    display: flex;
+    align-items: center;
+}
+
+nav span {
+    display: flex;
+    align-items: center;
+}
+
+header {
+    padding: 0 50px;
+    grid-area: 1 / 2 / 2 / -1;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr 1fr 2fr;
+}
+
+.top .name {
+  font-size: var(--h2-font-size);
+}
+
+.bot {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr 1fr 1fr;
+}
+
+.bot button {
+  background-color: var(--theme-color);
+  margin: 25px 10px 25px 10px;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-size: var(--h2-font-size);
+  font-weight: bold;
+}
+
+.bot .hi {
+  font-size: var(--h3-font-size);
+  font-weight: bold;
+}
+
+.bot .username {
+  font-size: var(--h1-font-size);
+  font-weight: bold;
+}
+
+main {
+    background-color: lightgray;
+    padding: 0 30px 0 30px;
+    display: grid;
+    grid-template: repeat(8, 1fr) / 3fr 3fr 2fr;
+    gap: 30px;
+}
+
+main .header {
+  font-size: var(--h2-font-size);
+  font-weight: bold;
+  display: flex;
+  align-items: end;
+}
+
+main #project {
+  grid-area: 1/1/2/3;
+}
+
+main .section {
+  background-color: white;  
+  border-radius: 10px;
+}
+
+main .project {
+  grid-row: span 2;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+main .project .border {
+  width: 30px;
+  height: 100%;
+  background-color: rgb(255, 196, 0);
+}
+
+main .project .content {
+  padding: 20px 10px 15px 10px;
+}
+
+main .project .content .text {
+  margin-left: 15px;
+  margin-right: 60px;
+  font-size: var(--h3-font-size);
+  color: var(--grey-text);
+  word-break: break-word;
+}
+
+main .project .content .title {
+  margin-left: 15px;
+  margin-right: 60px;
+  font-size: var(--h2-font-size);
+  font-weight: bold;
+}
+
+main .project .content .icons {
+  margin-right: 30px;
+  text-align: right;
+}
+
+main #announcements {
+  grid-area: 1/3/2/4;
+}
+
+main .announcements {
+  grid-area: 2/3/5/4;
+  padding: 30px;
+}
+
+main .announcements div {
+  margin: 0 30px 0 30px;
+  font-size: var(--h4-font-size);
+  color: var(--grey-text);
+  word-break: break-word;
+}
+
+main .announcements h3 {
+  margin: 0 30px 0 30px;
+  font-size: var(--h3-font-size);
+  font-weight: bold;
+}
+
+main .announcements .divider {
+  height: 1px;
+  margin: 30px 30px 30px 30px;
+  background-color: var(--grey-text);
+}
+
+main #trending {
+  grid-area: 5/3/6/4;
+}
+
+main .trending {
+  grid-area: 6/3/8/4; 
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
